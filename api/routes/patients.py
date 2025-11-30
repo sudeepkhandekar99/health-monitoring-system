@@ -3,7 +3,7 @@ from typing import List, Optional
 
 from fastapi import APIRouter, Query
 
-from app.models.schemas import Patient, VitalReading, Alert
+from models.schemas import Patient, VitalReading, Alert
 
 router = APIRouter(prefix="/patients", tags=["patients"])
 

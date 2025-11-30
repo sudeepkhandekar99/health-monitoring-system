@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.models.schemas import StreamStatus
+from models.schemas import StreamStatus
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 

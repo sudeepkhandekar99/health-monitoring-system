@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from fastapi import APIRouter, HTTPException
-from app.models.schemas import Alert
+from models.schemas import Alert
 
 router = APIRouter(prefix="/alerts", tags=["alerts"])
 
