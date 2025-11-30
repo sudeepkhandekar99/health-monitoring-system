@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pycache
+*.pkl
+
+# venv
+venv/
+env/
+.venv/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE / OS files
+.DS_Store
+.vscode/
+.idea/
+
+# Byte-compiled / C extensions
+*.so
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+.mypy_cache/
+.pytest_cache/
+
+# Build / Dist
+build/
+dist/
+*.egg-info/
+
+# pytest
+.coverage
+htmlcov/
+
+# AWS local dev
+.aws-sam/
+.aws/
+
+# Docker
+docker-compose.override.yml
+docker-compose.local.yml
+*.dockerfile
