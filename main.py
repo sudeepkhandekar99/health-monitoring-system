@@ -1,15 +1,22 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.routes import patients_router, alerts_router, admin_router
+from api.routes.patients import router as patients_router
+from api.routes.alerts import router as alerts_router
+from api.routes.admin import router as admin_router
 from core.config import settings
 
 app = FastAPI(title=settings.app_name)
 
-# CORS – adjust origins when you know your Next.js URL
+# CORS – update origins when your Next.js app is live
+origins = [
+    "http://localhost:3000",          # local Next.js dev
+    "https://your-frontend-url.com",  # replace later if you deploy
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # later: restrict to your frontend domain
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -21,7 +28,6 @@ async def health_check():
     return {"status": "ok"}
 
 
-# Include routers
 app.include_router(patients_router)
 app.include_router(alerts_router)
 app.include_router(admin_router)
