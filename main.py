@@ -9,10 +9,7 @@ from core.config import settings
 app = FastAPI(title=settings.app_name)
 
 # CORS – update origins when your Next.js app is live
-origins = [
-    "http://localhost:3000",          # local Next.js dev
-    "https://your-frontend-url.com",  # replace later if you deploy
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
